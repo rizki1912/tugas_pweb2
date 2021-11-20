@@ -91,7 +91,34 @@ $success = $session->getFlashdata('success');
                         </div>
                     <?php } ?>
 
-                    <a class="btn btn-warning" href="<?php echo base_url('Home/pdf') ?>"><i class="fa fa-file"></i> Eksport PDF</a>
+                    <form action="<?= base_url('laporan_pdf') ?>" method="post">
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                <div class="input-group mb-2">
+                                    <select name="start_periode" class="custom-select" id="inlineFormInputGroup" required>
+                                        <option value="" selected disabled>-- Pilih Tahun Mulai --</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                    </select>
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">-</div>
+                                    </div>
+                                    <select name="end_periode" class="custom-select" id="inlineFormInputGroup" required>
+                                        <option value="" selected disabled>-- Pilih Tahun Akhir --</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary" type="submit">Eksport PDF</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- <a style="margin-left: 10px;" class="btn btn-warning" href="<?php echo base_url('Home/pdf') ?>"><i class="fa fa-file"></i> Eksport PDF</a> -->
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">

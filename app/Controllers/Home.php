@@ -41,10 +41,12 @@ class Home extends BaseController
     public function pdf()
     {
         $__data = $this->request->getPost();
+        // echo 'a';
+        // return exit;
 
         $dompdf = new Dompdf();
 
-        $data = $this->db->table('tbl_penjualan')->orderBy('tahun', 'ASC')->get()->getResult();
+        $data = $this->db->table('tbl_penjualan')->where('tahun >=', $__data['start_periode'])->where('tahun <=', $__data['end_periode'])->orderBy('tahun', 'ASC')->get()->getResult();
 
         if ($data) {
             $dompdf->loadHtml(view('laporan/laporan_pdf', ["barang" => $data]));

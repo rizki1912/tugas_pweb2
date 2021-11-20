@@ -10,7 +10,7 @@ $success = $session->getFlashdata('success');
 
 <section class="section">
     <div class="section-header">
-        <h1>Dashboard Penjualan</h1>
+        <h1>Dashboard Penjualan oleh Rizki</h1>
     </div>
 </section>
 <div class="row">
